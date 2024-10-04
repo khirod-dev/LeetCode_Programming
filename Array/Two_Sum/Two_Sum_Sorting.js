@@ -1,12 +1,14 @@
 //https://www.youtube.com/watch?v=7jDS9KQEDbI&t=51s
-let given_Array = [16, 4, 23, 8, 15, 42, 1, 2];
-let sorted_Array = [1, 2, 4, 8, 15, 16, 23, 42];//Need to learn how to use quick sort here ..for now just manually sorted 
-let target = 44;
+//let given_Array = [16, 4, 23, 8, 15, 42, 1, 2];
+//given_Array.sort(function(a,b){a-b})
+//let sorted_Array = [1, 2, 4, 8, 15, 16, 23, 42];//Need to learn how to use quick sort here ..for now just manually sorted 
+//let target = 44;
 
 function getTwoSum_Sorting(sorted_Array, target) {
+    sorted_Array.sort(function(a,b){a-b});
     let i = 0;
     let j = sorted_Array.length - 1;
-    while (j > 0) {
+    while (i < j) {
         if (sorted_Array[i] + sorted_Array[j] > target) { // check if addition is greater than target then take j 1 down
             j--;
         }
@@ -18,5 +20,7 @@ function getTwoSum_Sorting(sorted_Array, target) {
     }
 
 }
+let given_Array = [16, 4, 23, 8, 15, 42, 1, 2];
+let target = 44;
 
-console.log(getTwoSum_Sorting(sorted_Array, target))
+console.log(getTwoSum_Sorting(given_Array, target))
