@@ -2,7 +2,7 @@
 let coinsArray = [2, 3, 5]
 let amount = 11;
 //      |0|1|2|3|4|5|6|7|8|9|10|11
-function getMinCoinDp(coinsArray, amount) {
+function getMinCoinDp(coins, amount) {
     if (amount <= 0) {
         return 0;
     }
