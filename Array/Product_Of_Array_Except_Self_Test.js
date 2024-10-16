@@ -1,29 +1,18 @@
-let givenArray = [3, 4, 6, 1, 2];
-
-function getProductOfArray(givenArray) {
-    let leftMulansArray = Array(givenArray.length).fill(1);
-    let rightMulansArray = Array(givenArray.length).fill(1);
-    let ansArray=[];
-    //Left To Right
-    for (let i = 1; i < givenArray.length; i++) {
-       if(i==0){
-        leftMulansArray[i]=1;
-        
-       }else{
-        leftMulansArray[i]= givenArray[i-1] * leftMulansArray [i-1]
-       }
-       
-    }
-
-    //Right ToLeft
-    for (i=givenArray.length -2  ;i>0;i--){
-     
-        rightMulansArray[i]= rightMulansArray[i+1]* givenArray [i+1]
-    }
-
-    for (i=0; i<leftMulansArray.length ;i++){
-        ansArray[i]= leftMulansArray[i]*rightMulansArray[i]
-    }
-    return ansArray;
+var productExceptSelf = function(nums) {
+let leftArray= Array(nums.length).fill(1);
+let rightArray = Array(nums.length).fill(1);
+let ansArray= Array(nums.length).fill(1);
+for (let i=1; i< nums.length ;i++){
+    leftArray[i]= nums[i-1]* leftArray[i-1]
 }
-console.log(getProductOfArray(givenArray))
+for (let i=nums.length-2; i>=0; i--){
+    rightArray[i]= nums[i+1]* rightArray[i+1];
+    ansArray[i]=leftArray[i]*rightArray[i]
+}
+ansArray[nums.length-1]=leftArray[nums.length-1]*rightArray[nums.length-1]
+return ansArray;
+}
+
+let nums =[1,2,3,4];
+
+console.log(productExceptSelf(nums))

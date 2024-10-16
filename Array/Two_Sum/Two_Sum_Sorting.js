@@ -4,8 +4,8 @@
 //let sorted_Array = [1, 2, 4, 8, 15, 16, 23, 42];//Need to learn how to use quick sort here ..for now just manually sorted 
 //let target = 44;
 
-function getTwoSum_Sorting(sorted_Array, target) {
-    sorted_Array.sort(function(a,b){a-b});
+function getTwoSum_Sorting(given_Array, target) {
+    let sorted_Array= given_Array.sort(function(a,b){a-b});
     let i = 0;
     let j = sorted_Array.length - 1;
     while (i < j) {
@@ -20,7 +20,7 @@ function getTwoSum_Sorting(sorted_Array, target) {
     }
 
 }
-let given_Array = [16, 4, 23, 8, 15, 42, 1, 2];
-let target = 44;
+let given_Array = [3,2,4];
+let target = 6;
 
 console.log(getTwoSum_Sorting(given_Array, target))

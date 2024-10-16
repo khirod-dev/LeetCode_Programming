@@ -2,7 +2,7 @@
 
 
 
-function findMulutiplier(numArray){
+function findMulutiplier(nums){
 const numArray_length=nums.length;
 let answer=new Array(numArray_length).fill(1);
 
@@ -10,12 +10,12 @@ let answer=new Array(numArray_length).fill(1);
 let leftProduct=1;
 for (let i=0;i<numArray_length;i++){
     answer[i]=leftProduct;
-    leftProduct =leftProduct*numArray[i]
+    leftProduct =leftProduct*nums[i]
 }
 let rightProduct=1;
 for(let i=numArray_length-1;i>=0;i--){
     answer[i]=answer[i] * rightProduct;
-    rightProduct=rightProduct*numArray[i]
+    rightProduct=rightProduct*nums[i]
 }
 return answer;
 }
